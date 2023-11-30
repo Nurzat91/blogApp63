@@ -1,7 +1,9 @@
 import axiosApi from '../../axiosApi';
 import {useCallback, useState} from 'react';
-import {TextForm} from '../../types';
+import {TextData, TextForm} from '../../types';
+import {useNavigate} from 'react-router-dom';
 const Add = () => {
+  const navigate = useNavigate();
   const [textForm, setTextForm] = useState<TextForm>({
     title: '',
     text: '',
@@ -19,6 +21,18 @@ const Add = () => {
   const onFormSubmit = async (event: React.FormEvent) =>{
     event.preventDefault();
     console.log(textForm);
+
+    const sendForm: TextData = {
+      textForm,
+    }
+
+    try{
+      await axiosApi.post('posts.json', sendForm)
+
+      navigate('/');
+    }finally {
+
+    }
   };
 
   return (
@@ -27,7 +41,7 @@ const Add = () => {
         <form onSubmit={onFormSubmit}>
           <h3>Add new post</h3>
           <div className="form-group">
-            <label htmlFor="title" className="mb-2"компонент >Title</label>
+            <label htmlFor="title" className="mb-2">Title</label>
             <input
               id="title" type="text" name="title" required
               className="form-control"
