@@ -8,3 +8,11 @@ export interface TextForm {
 export interface TextData {
   textForm: TextForm;
 }
+export interface ContactData {
+  country: string;
+  from: string;
+  address: string;
+  home: string;
+  phoneNumber: string;
+  email: string;
+}
