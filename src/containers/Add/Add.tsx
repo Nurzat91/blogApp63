@@ -5,6 +5,8 @@ import {useNavigate} from 'react-router-dom';
 const Add = () => {
   const navigate = useNavigate();
   const [textForm, setTextForm] = useState<TextForm>({
+    id: Math.random().toString(),
+    date: new Date().toLocaleString(),
     title: '',
     text: '',
   });
@@ -20,14 +22,13 @@ const Add = () => {
 
   const onFormSubmit = async (event: React.FormEvent) =>{
     event.preventDefault();
-    console.log(textForm);
 
     const sendForm: TextData = {
       textForm,
     }
 
     try{
-      await axiosApi.post('posts.json', sendForm)
+      await axiosApi.post('posts.json', sendForm);
 
       navigate('/');
     }finally {
@@ -40,10 +41,11 @@ const Add = () => {
       <div className="col">
         <form onSubmit={onFormSubmit}>
           <h3>Add new post</h3>
+          <p>{textForm.date}</p>
           <div className="form-group">
             <label htmlFor="title" className="mb-2">Title</label>
             <input
-              id="title" type="text" name="title" required
+              id={textForm.id} type="text" name="title" required
               className="form-control"
               value={textForm.title}
               onChange={textChanged}
@@ -52,7 +54,7 @@ const Add = () => {
           <div className="form-group d-flex flex-column my-3">
             <label htmlFor="post" className="mb-2">Description</label>
             <textarea
-              id="post" name="text" required rows={5} cols={40}
+              id={textForm.id} name="text" required rows={5} cols={40}
               value={textForm.text}
               onChange={textChanged}
             />
