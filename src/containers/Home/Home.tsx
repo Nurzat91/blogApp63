@@ -47,7 +47,7 @@ const Home = () => {
               <strong>Title: </strong>
               {post.textForm.title}
             </div>
-            <Link to={'/posts/' + postKey}>Read more &gt;&gt;</Link>
+            <Link className="btn btn-light w-25" to={'/posts/' + postKey}>Read more &gt;&gt;</Link>
           </div>
         );
       })}

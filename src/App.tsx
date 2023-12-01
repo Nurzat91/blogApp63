@@ -19,6 +19,7 @@ function App() {
           <Route path="/posts" element={(<Home/>)}></Route>
           <Route path="/posts/:id" element={<PostsPage/>}/>
           <Route  path="/add" element={(<Add/>)}/>
+          <Route  path="/posts/:id/edit" element={(<Add/>)}/>
           <Route path="/about" element={(<About/>)}/>
           <Route  path="/contacts" element={(<Contacts/>)}/>
           <Route path="*" element={(<h1>Not Found!</h1>)}/>
