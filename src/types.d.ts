@@ -16,3 +16,12 @@ export interface ContactData {
   phoneNumber: string;
   email: string;
 }
+
+export interface AboutData{
+  name: string;
+  lastName: string;
+  hobby: string;
+  game: string;
+  group: string;
+  book: string;
+}
