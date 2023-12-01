@@ -4,7 +4,7 @@ import Spinner from '../../components/Spinner/Spinner';
 import {AboutData} from '../../types';
 
 const About = () => {
-  const [aboutData, setAboutData] = useState<AboutData | null>(null)
+  const [aboutData, setAboutData] = useState<AboutData | null>(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getPostData = async () => {

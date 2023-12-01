@@ -16,7 +16,8 @@ function App() {
       <main className="container">
         <Routes>
           <Route path="/" element={(<Home/>)}/>
-          <Route path="/posts" element={(<Home/>)}></Route>
+          <Route path="/posts" element={(<Home/>)}>
+          </Route>
           <Route path="/posts/:id" element={<PostsPage/>}/>
           <Route  path="/add" element={(<Add/>)}/>
           <Route  path="/posts/:id/edit" element={(<Add/>)}/>

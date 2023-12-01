@@ -1,7 +1,7 @@
 import axiosApi from '../../axiosApi';
 import { useEffect, useState } from 'react';
 import { TextForm } from '../../types';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Spinner from '../../components/Spinner/Spinner';
 
 interface Props {
